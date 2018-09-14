@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityFramework.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -30,7 +31,7 @@ namespace Dot.Net.Framework.Prototype.Data.Repository.EF
         #region [Constructors]
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EfRepository{TPocoEntity}"/> class.
+        /// Initializes a new instance of the <see cref="Repository{TPocoEntity}"/> class.
         /// </summary>
         /// <param name="context">The database context.</param>
         public Repository(DbContext context)
@@ -183,7 +184,7 @@ namespace Dot.Net.Framework.Prototype.Data.Repository.EF
         public virtual void Insert(IEnumerable<TPocoEntity> entitiesToInsert)
         {
             // Used bulk insert for large insert.
-            //EFBatchOperation.For(_context, _dbSet).InsertAll(entitiesToInsert);
+            EFBatchOperation.For(_context, _dbSet).InsertAll(entitiesToInsert);
         }
 
         /// <summary>
