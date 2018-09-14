@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -58,12 +59,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pocos\AppCompositeRole.cs" />
+    <Compile Include="Pocos\AppCompositeRoleItem.cs" />
+    <Compile Include="Pocos\AppDocumentNo.cs" />
+    <Compile Include="Pocos\AppLog.cs" />
+    <Compile Include="Pocos\AppMenu.cs" />
+    <Compile Include="Pocos\AppSingleRole.cs" />
+    <Compile Include="Pocos\Attachment.cs" />
+    <Compile Include="Pocos\Authority.cs" />
+    <Compile Include="Pocos\AuthorityCompany.cs" />
+    <Compile Include="Pocos\B.cs" />
+    <Compile Include="Pocos\BoardUser.cs" />
+    <Compile Include="Pocos\BSCompany.cs" />
+    <Compile Include="Pocos\BSPayee.cs" />
+    <Compile Include="Pocos\BSSigner.cs" />
+    <Compile Include="Pocos\CA.cs" />
+    <Compile Include="Pocos\CAReceive.cs" />
+    <Compile Include="Pocos\CompanyBankInfo.cs" />
+    <Compile Include="Pocos\CompanyManager.cs" />
+    <Compile Include="Pocos\CompanyManagerItem.cs" />
+    <Compile Include="Pocos\ConfigureValue.cs" />
+    <Compile Include="Pocos\ConnectionLog.cs" />
+    <Compile Include="Pocos\CostCenter.cs" />
+    <Compile Include="Pocos\CostCenterManager.cs" />
+    <Compile Include="Pocos\CostCenterManagerItem.cs" />
+    <Compile Include="DSDBContext.cs" />
+    <Compile Include="Pocos\EmailTask.cs" />
+    <Compile Include="Pocos\EmailTaskContent.cs" />
+    <Compile Include="Pocos\EmailTaskReceiver.cs" />
+    <Compile Include="Pocos\EmailTemplate.cs" />
+    <Compile Include="Pocos\ExecutiveUser.cs" />
+    <Compile Include="Pocos\HolidayCalendar.cs" />
+    <Compile Include="Pocos\HRBusinessPlace.cs" />
+    <Compile Include="Pocos\HRCompany.cs" />
+    <Compile Include="Pocos\HREmployee.cs" />
+    <Compile Include="Pocos\HREmployeeMobile.cs" />
+    <Compile Include="Pocos\HROrg.cs" />
+    <Compile Include="Pocos\HROrgRelation.cs" />
+    <Compile Include="Pocos\HRPosition.cs" />
+    <Compile Include="Pocos\OTP.cs" />
+    <Compile Include="Pocos\PV.cs" />
+    <Compile Include="Pocos\PVActivitySAP.cs" />
+    <Compile Include="Pocos\PVGroup.cs" />
+    <Compile Include="Pocos\PVGroupItem.cs" />
+    <Compile Include="Pocos\PVItem.cs" />
+    <Compile Include="Pocos\PVItemSAP.cs" />
+    <Compile Include="Pocos\PVSAP.cs" />
+    <Compile Include="Pocos\RespGroup.cs" />
+    <Compile Include="Pocos\RespGroupAdmin.cs" />
+    <Compile Include="Pocos\RespGroupComp.cs" />
+    <Compile Include="Pocos\RespGroupEmp.cs" />
+    <Compile Include="Pocos\RespGroupOrg.cs" />
+    <Compile Include="Pocos\ReviewManager.cs" />
+    <Compile Include="Pocos\ReviewManagerItem.cs" />
+    <Compile Include="Pocos\UserPostal.cs" />
+    <Compile Include="Pocos\UserRole.cs" />
+    <Compile Include="Pocos\ValueHelp.cs" />
+    <Compile Include="Pocos\WorkflowActivityLog.cs" />
+    <Compile Include="Pocos\WorkflowActivityStep.cs" />
+    <Compile Include="Pocos\WorkflowDelegate.cs" />
+    <Compile Include="Pocos\WorkflowProcess.cs" />
+    <Compile Include="Pocos\WorkflowProcessInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EF\Repository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
+    <Compile Include="Repository\Page.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
