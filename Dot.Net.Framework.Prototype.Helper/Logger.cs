@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Dot.Net.Framework.Prototype.Helper.Interfaces;
+using System;
+using System.Web;
 
-namespace Dot.Net.Framework.Prototype.Helper.Logger
+namespace Dot.Net.Framework.Prototype.Helper
 {
     /// <summary>
     /// Logger class is intended for log all activities by using NLog library.
@@ -13,6 +15,10 @@ namespace Dot.Net.Framework.Prototype.Helper.Logger
         /// The session key for Mapped Diagnostic Logical Context (MDLC) of NLog.
         /// </summary>
         private const string NLOG_MDC_SESSION_ID_KEY = "session-id";
+        /// <summary>
+        /// The identity key for Mapped Diagnostic Logical Context (MDLC) of NLog.
+        /// </summary>
+        private const string NLOG_MDC_IDENTITY_KEY = "identity";
         /// <summary>
         /// The NLog logger object.
         /// </summary>
@@ -40,9 +46,10 @@ namespace Dot.Net.Framework.Prototype.Helper.Logger
         /// <summary>
         /// Creates a new session for logging.
         /// </summary>
-        public void CreateNewSession()
+        public void CreateNewSession(HttpContext context)
         {
             NLog.MappedDiagnosticsContext.Set(NLOG_MDC_SESSION_ID_KEY, Guid.NewGuid().ToString());
+            NLog.MappedDiagnosticsContext.Set(NLOG_MDC_IDENTITY_KEY, context.User?.Identity.Name ?? "");
         }
 
         /// <summary>

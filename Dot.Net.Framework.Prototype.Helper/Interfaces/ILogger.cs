@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Web;
 
-namespace Dot.Net.Framework.Prototype.Helper.Logger
+namespace Dot.Net.Framework.Prototype.Helper.Interfaces
 {
     /// <summary>
     /// Interface ILogger provides logging to track all activities by using NLog library.
@@ -10,7 +11,7 @@ namespace Dot.Net.Framework.Prototype.Helper.Logger
         /// <summary>
         /// Creates a new session for logging.
         /// </summary>
-        void CreateNewSession();
+        void CreateNewSession(HttpContext context);
 
         /// <summary>
         /// Logs the debug, the message will be logged when debug mode is on.
